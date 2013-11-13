@@ -1,0 +1,172 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/css/datepicker.css">
+	    <link rel="stylesheet" href="styles/1ffd0696.main.css">
+        <script src="scripts/vendor/f7f27360.modernizr.js"></script>
+        <link href="http://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet" type="text/css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron">
+                    <h1 class="text-center">Anniversay Reminder</h1>
+                    <h4 id="userEmail"></h4>
+                    <h4 id="userDate"></h4>
+                    <h4 id="countdown"></h4>
+                </div>
+            </div>
+    	    <div id="quickStart" class="row">
+        	    <div class="col-md-12">
+            	    <form class="form-horizontal grey-bg padding-20" role="form">
+            	        <span>
+            	            <h2>Enter your wedding date below to start getting great anniversary ideas right away!</h2>
+            	            <div class="form-group">
+                    	    	<label>
+                    			    Date:
+                    			    <div class="input-append date datepicker">
+                    			        <input id="quickDate" type="text" class="datepicker form-control">
+                    			        <span class="add-on"><i class="icon-th"></i>
+                			        </span></div>
+                    		    </label>
+                		    </div>
+                		    <div class="form-group">
+                		        <p>Buying For: </p>
+                    		    <label class="checkbox">
+                                    <input type="checkbox"> Woman
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox"> Man
+                                </label>
+                            </div>
+                		    <div class="form-group">
+                		        <input type="button" class="btn btn-quick-start" value="Get Ideas!">
+            		        </div>
+            		        <div id="signinChoice">
+                	            <span class="link-signin">Sign In</span>/<span class="link-register">Register</span>
+                	        </div>
+            	        </span>
+    	        </form></div>
+	        </div>
+	        <div class="row">
+    	        <div class="col-md-4">
+            	        <span id="userForm" class="hide">
+            	            <div id="register" class="col-md-6">
+                	            <h4>Register</h4>
+                	            <div class="grey-bg padding-20">
+                        	        <div class="form-group">
+                            	    	<label>
+                            			    Date:
+                            			    <div class="input-append date datepicker">
+                            			        <input id="date" type="text" class="form-control">
+                            			        <span class="add-on"><i class="icon-th"></i>
+                            			    </span></div>
+                            		    </label>
+                        		    </div>
+                        		    <div class="form-group">
+                            		    <label>
+                            			    E-Mail:
+                            			    <input id="emailRegister" type="email" class="form-control">
+                            		    </label>
+                        		    </div>
+                        		    <div class="form-group">
+                            		    <label>
+                            			    Password:
+                            			    <input id="passwordRegister" type="password" class="form-control">
+                            		    </label>
+                        		    </div>
+                        		    <div class="form-group">
+                        		        <input type="button" class="btn btn-set-user-register" value="Register">
+                    		        </div>
+                		        </div>
+            		        </div>
+            		        <div id="signin" class="col-md-6">
+                		        <h4>Sign-In</h4>
+                		        <div class="grey-bg padding-20">
+                		            <div class="form-group">
+                            		    <label>
+                            			    E-Mail:
+                            			    <input id="emailSignin" type="email" class="form-control">
+                            		    </label>
+                        		    </div>
+                        		    <div class="form-group">
+                            		    <label>
+                            			    Password:
+                            			    <input id="passwordSignin" type="password" class="form-control">
+                            		    </label>
+                        		    </div>
+                        		    <div class="form-group">
+                        		        <input type="button" class="btn btn-set-user-signin" value="Sign In">
+                    		        </div>
+                		        </div>
+            		        </div>
+        		        </span>
+        		        <div id="itemForm" class="hide">
+            		        <h4>New Item</h4>
+            		        <div class="grey-bg padding-20">
+                    		    <div class="form-group">
+                            	   	<label>
+                            			Item Name:
+                            			<input id="title" type="text" class="form-control">
+                            		</label>
+                        		</div>
+                        		<div class="form-group">
+                            		<label>
+                            		    Item Description:
+                            		    <textarea id="description" class="form-control" rows="3"></textarea>
+                            		</label>
+                        		</div>
+                        		<div class="form-group">
+                        		    <input type="button" class="btn btn-add-item" value="Add Item">
+                        		</div>
+                    		</div>
+                		</div>
+                	
+            	</div>
+            	<div id="ideaCol" class="col-md-4 hide">
+            	    <h4>Ideas for your <span class="ann-year"></span> anniversary: </h4>
+            		<ul id="ideaList" class="list-unstyled">
+            		</ul>
+        		</div>
+            	<div id="itemCol" class="col-md-4 hide">
+            	    <h4>Current List:</h4>
+            		<ul id="itemList" class="list-unstyled">
+            		</ul>
+        		</div>
+    	    </div>
+        </div>
+	<script id="item-template" type="text/x-handlebars-template">
+		<h1>{{title}}</h1>
+		<p class="description">{{description}}</p>
+		<div class="btn btn-default btn-amazon">Amazon</div>
+		<div class="btn btn-default btn-list">Check Locally</div>
+		<div class="amazon-results"></div>
+		<div class="local-results"></div>
+	</script>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!--<script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>-->
+        <script src="scripts/36ac8bb6.vendor.js"></script>
+
+        <script src="scripts/8766144a.main.js"></script>
+</body>
+</html>
